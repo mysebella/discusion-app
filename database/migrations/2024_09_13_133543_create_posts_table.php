@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')
                 ->references('id')
                 ->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('caption');
-            $table->bigInteger('like');
+            $table->string('caption')->nullable();
+            $table->bigInteger('like')->default(0);
             $table->timestamps();
         });
     }
